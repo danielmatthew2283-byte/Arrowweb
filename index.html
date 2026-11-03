@@ -1,0 +1,825 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ARROW CAT | The Guardian of the Green Kingdom</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=MedievalSharp&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --green: #064e32;
+    --dark-green: #022b1c;
+    --black: #050806;
+    --gold: #d6ae55;
+    --light-gold: #f4d98b;
+    --white: #f5f0df;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+/* BACKGROUND */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 50% 20%, rgba(0,100,55,0.2), transparent 50%),
+        radial-gradient(circle at 10% 80%, rgba(0,70,40,0.15), transparent 40%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* NAVBAR */
+
+nav {
+    width: 100%;
+    padding: 22px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(214,174,85,0.2);
+    background: rgba(2,15,9,0.9);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(15px);
+}
+
+.logo {
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
+    font-size: 24px;
+    color: var(--gold);
+    letter-spacing: 3px;
+}
+
+.logo span {
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #c5c5b4;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.nav-btn {
+    border: 1px solid var(--gold);
+    padding: 10px 18px;
+    color: var(--gold) !important;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 70px 8%;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "✦";
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    font-size: 100px;
+    color: rgba(214,174,85,0.05);
+}
+
+.hero::after {
+    content: "✦";
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    font-size: 150px;
+    color: rgba(214,174,85,0.04);
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.subtitle {
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    letter-spacing: 5px;
+    font-size: 12px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(45px, 7vw, 90px);
+    font-weight: 900;
+    line-height: 1.05;
+    color: var(--white);
+    text-shadow: 0 0 40px rgba(0,100,50,0.3);
+}
+
+.hero h1 span {
+    color: var(--gold);
+    display: block;
+}
+
+.hero-description {
+    max-width: 480px;
+    line-height: 1.8;
+    color: #a8b4a9;
+    margin: 25px 0 35px;
+    font-size: 15px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 28px;
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--gold);
+    color: var(--black);
+    border: 1px solid var(--gold);
+}
+
+.btn-primary:hover {
+    background: transparent;
+    color: var(--gold);
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    border: 1px solid #456b52;
+    color: var(--white);
+}
+
+.btn-outline:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    transform: translateY(-3px);
+}
+
+/* HERO IMAGE */
+
+.hero-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-frame {
+    position: relative;
+    max-width: 480px;
+    width: 100%;
+    border: 2px solid var(--gold);
+    padding: 8px;
+    background: var(--dark-green);
+    box-shadow: 0 0 60px rgba(0,100,50,0.2);
+}
+
+.image-frame::before {
+    content: "";
+    position: absolute;
+    inset: -15px;
+    border: 1px solid rgba(214,174,85,0.3);
+    pointer-events: none;
+}
+
+.image-frame img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.image-label {
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+    letter-spacing: 4px;
+    font-size: 12px;
+    padding: 15px;
+    background: #03170e;
+}
+
+/* SECTION */
+
+section {
+    padding: 100px 8%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-heading .small-title {
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    color: var(--gold);
+    letter-spacing: 5px;
+    margin-bottom: 15px;
+}
+
+.section-heading h2 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(30px, 5vw, 48px);
+    color: var(--white);
+}
+
+.section-heading h2 span {
+    color: var(--gold);
+}
+
+.section-heading p {
+    color: #849388;
+    margin-top: 20px;
+    line-height: 1.8;
+}
+
+/* LORE */
+
+.lore {
+    background: linear-gradient(180deg, #030806, #032718, #030806);
+    border-top: 1px solid rgba(214,174,85,0.15);
+    border-bottom: 1px solid rgba(214,174,85,0.15);
+}
+
+.lore-box {
+    max-width: 850px;
+    margin: auto;
+    border: 1px solid rgba(214,174,85,0.3);
+    padding: 50px;
+    text-align: center;
+    position: relative;
+    background: rgba(0,0,0,0.2);
+}
+
+.lore-box::before {
+    content: "✦";
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--gold);
+    background: var(--black);
+    padding: 0 15px;
+    font-size: 25px;
+}
+
+.lore-box p {
+    color: #b2c0b4;
+    font-size: 16px;
+    line-height: 2;
+}
+
+.lore-box p span {
+    color: var(--gold);
+    font-weight: 700;
+}
+
+/* TOKEN */
+
+.token-section {
+    text-align: center;
+}
+
+.token-card {
+    max-width: 700px;
+    margin: auto;
+    border: 1px solid rgba(214,174,85,0.4);
+    padding: 40px;
+    background: linear-gradient(135deg, #04190e, #030806);
+}
+
+.token-card h3 {
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+.ca-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #829486;
+    margin-bottom: 15px;
+}
+
+.ca-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    border: 1px solid #31543c;
+    background: #020805;
+    padding: 15px;
+}
+
+.ca-address {
+    color: var(--light-gold);
+    font-size: 13px;
+    word-break: break-all;
+    text-align: left;
+}
+
+.copy-btn {
+    flex-shrink: 0;
+    padding: 12px 18px;
+    background: var(--gold);
+    border: none;
+    color: #050806;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+}
+
+.copy-btn:hover {
+    background: var(--light-gold);
+}
+
+.copy-btn.copied {
+    background: #1b8d52;
+    color: white;
+}
+
+.token-note {
+    color: #65796b;
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+/* COMMUNITY */
+
+.community {
+    background: #03190e;
+    border-top: 1px solid rgba(214,174,85,0.2);
+    text-align: center;
+}
+
+.community h2 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(30px, 5vw, 48px);
+    color: var(--gold);
+}
+
+.community p {
+    color: #9aab9e;
+    margin: 20px auto 35px;
+    max-width: 600px;
+    line-height: 1.8;
+}
+
+.community-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* FOOTER */
+
+footer {
+    background: #020604;
+    padding: 30px 8%;
+    text-align: center;
+    border-top: 1px solid rgba(214,174,85,0.2);
+}
+
+footer .footer-logo {
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+    font-weight: 900;
+    letter-spacing: 4px;
+    font-size: 20px;
+}
+
+footer p {
+    color: #657568;
+    font-size: 11px;
+    margin-top: 15px;
+    letter-spacing: 1px;
+}
+
+/* MOBILE */
+
+@media (max-width: 850px) {
+
+    nav {
+        padding: 18px 5%;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .nav-btn {
+        padding: 8px 10px;
+    }
+
+    .hero {
+        padding: 60px 6%;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 45px;
+    }
+
+    .hero-description {
+        margin: 25px auto 35px;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .hero-image {
+        max-width: 450px;
+        margin: auto;
+    }
+
+    section {
+        padding: 70px 6%;
+    }
+
+    .lore-box {
+        padding: 35px 20px;
+    }
+
+    .token-card {
+        padding: 25px 15px;
+    }
+
+    .ca-box {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .ca-address {
+        text-align: center;
+    }
+
+    .copy-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .nav-links a:nth-child(1) {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 46px;
+    }
+
+    .btn {
+        padding: 13px 18px;
+        font-size: 10px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+    <div class="logo">ARROW <span>CAT</span></div>
+
+    <div class="nav-links">
+        <a href="#lore">Lore</a>
+        <a href="#token">Contract</a>
+        <a href="https://t.me/arrowcatonRobinhood" target="_blank" class="nav-btn">Join Us</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+
+<header class="hero">
+
+    <div class="hero-container">
+
+        <div class="hero-content">
+
+            <div class="subtitle">
+                ✦ THE GUARDIAN OF THE GREEN KINGDOM ✦
+            </div>
+
+            <h1>
+                ARROW
+                <span>CAT</span>
+            </h1>
+
+            <p class="hero-description">
+                From the ancient forests comes a fearless feline
+                warrior. Cloaked in emerald shadows, armed with
+                a legendary bow, Arrow Cat is ready to conquer
+                the kingdom.
+                <br><br>
+                The hunt has begun. The legend is rising.
+            </p>
+
+            <div class="buttons">
+
+                <a href="https://t.me/arrowcatonRobinhood"
+                   target="_blank"
+                   class="btn btn-primary">
+                    JOIN THE KINGDOM
+                </a>
+
+                <a href="https://x.com/catOnRHxyz"
+                   target="_blank"
+                   class="btn btn-outline">
+                    FOLLOW ON X
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-image">
+
+            <div class="image-frame">
+
+                <!-- YOUR ARROW CAT IMAGE -->
+                
+
+                <div class="image-label">
+                    THE LEGENDARY ARCHER
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- LORE -->
+
+<section class="lore" id="lore">
+
+    <div class="section-heading">
+
+        <div class="small-title">THE ANCIENT CHRONICLES</div>
+
+        <h2>The <span>Legend</span></h2>
+
+        <p>A tale written in emerald and gold.</p>
+
+    </div>
+
+    <div class="lore-box">
+
+        <p>
+            In a forgotten kingdom deep within the emerald forest,
+            a warrior was born.
+            <br><br>
+
+            <span>Arrow Cat</span> is no ordinary feline.
+            He is the keeper of the ancient bow, the protector
+            of the green kingdom, and the hunter of every
+            challenge that stands in his path.
+            <br><br>
+
+            With unwavering courage and a legendary aim,
+            he marches forward into the unknown.
+            <br><br>
+
+            His kingdom is growing.
+            His arrows never miss.
+            <br><br>
+
+            <span>THE KINGDOM BELONGS TO THE BRAVE.</span>
+        </p>
+
+    </div>
+
+</section>
+
+<!-- CONTRACT -->
+
+<section class="token-section" id="token">
+
+    <div class="section-heading">
+
+        <div class="small-title">THE ROYAL SEAL</div>
+
+        <h2>Token <span>Contract</span></h2>
+
+        <p>
+            Keep the royal address close.
+            Copy the contract address below.
+        </p>
+
+    </div>
+
+    <div class="token-card">
+
+        <h3>$ARROWCAT</h3>
+
+        <div class="ca-label">
+            OFFICIAL CONTRACT ADDRESS
+        </div>
+
+        <div class="ca-box">
+
+            <div class="ca-address" id="contractAddress">
+                0xec136a2c9a7a478319012e88353eb6553dc443b3
+            </div>
+
+            <button class="copy-btn" id="copyButton" onclick="copyCA()">
+                COPY CA
+            </button>
+
+        </div>
+
+        <p class="token-note">
+            Verify the contract before making any transaction.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- COMMUNITY -->
+
+<section class="community" id="community">
+
+    <div class="section-heading">
+
+        <div class="small-title">THE ROYAL FELLOWSHIP</div>
+
+        <h2>Join the <span>Kingdom</span></h2>
+
+    </div>
+
+    <p>
+        Every legend needs its warriors.
+        Become part of the Arrow Cat community.
+        The kingdom is stronger together.
+    </p>
+
+    <div class="community-buttons">
+
+        <a href="https://t.me/YOUR_TELEGRAM"
+           target="_blank"
+           class="btn btn-primary">
+            TELEGRAM
+        </a>
+
+        <a href="https://x.com/YOUR_X_USERNAME"
+           target="_blank"
+           class="btn btn-outline">
+            FOLLOW ON X
+        </a>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-logo">
+        ⚔ ARROW CAT ⚔
+    </div>
+
+    <p>
+        THE LEGEND OF THE EMERALD KINGDOM
+    </p>
+
+    <p>
+        © 2026 ARROW CAT. ALL RIGHTS RESERVED.
+    </p>
+
+</footer>
+
+<!-- COPY CA FUNCTION -->
+
+<script>
+
+async function copyCA() {
+
+    const ca = document.getElementById("contractAddress").innerText.trim();
+    const button = document.getElementById("copyButton");
+
+    if (ca === "PASTE_YOUR_CONTRACT_ADDRESS_HERE" || ca === "") {
+        button.innerText = "ADD CA FIRST";
+        return;
+    }
+
+    try {
+
+        await navigator.clipboard.writeText(ca);
+
+        button.innerText = "COPIED ✓";
+        button.classList.add("copied");
+
+        setTimeout(() => {
+            button.innerText = "COPY CA";
+            button.classList.remove("copied");
+        }, 2000);
+
+    } catch (error) {
+
+        const textArea = document.createElement("textarea");
+        textArea.value = ca;
+
+        document.body.appendChild(textArea);
+        textArea.select();
+
+        document.execCommand("copy");
+        document.body.removeChild(textArea);
+        button.innerText = "COPIED ✓";
+        button.classList.add("copied");
+
+        setTimeout(() => {
+            button.innerText = "COPY CA";
+            button.classList.remove("copied");
+        }, 2000);
+    }
+
+}
+
+</script>
+
+</body>
+</html>
+
